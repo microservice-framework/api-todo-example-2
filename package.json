@@ -1,0 +1,46 @@
+{
+  "name": "api-todo-example",
+  "version": "1.0.0",
+  "description": "Example API for TODO service",
+  "mongo_url": "mongodb://localhost:27017/",
+  "mongo_options": "",
+  "mongo_database": "todoapi2",
+  "mongo_prefix": "todoapi2",
+  "router_secret": "a55c05d2ba33cef033df9c63b63c28bd52e03ab419393e21",
+  "router_url": "http://localhost:3000",
+  "router_proxy_url": "http://localhost:3100",
+  "services": {
+    "microservice-router": {
+      "source": "@microservice-framework/microservice-router",
+      "settings": {
+        "secure_key": "a55c05d2ba33cef033df9c63b63c28bd52e03ab419393e21"
+      }
+    },
+    "example-todo": {
+      "source": "github:microservice-framework/example-todo",
+      "settings": {
+        "port": 15003,
+        "secure_key": "524b8c2be918d408d8d9c89a6d5ce7e85e25e0efa412d8aa"
+      }
+    },
+    "microservice-auth": {
+      "source": "@microservice-framework/microservice-auth",
+      "settings": {
+        "secure_key": "83a32c2ba8e66c8f8987b8587ec6ec25eade2574731e215e"
+      }
+    },
+    "microservice-users": {
+      "source": "github:microservice-framework/microservice-users",
+      "settings": {
+        "secure_key": "de4703e35d056339336f60170e48e67dbf4d1d5e68af9c96"
+      }
+    },
+    "microservice-users-login": {
+      "source": "github:microservice-framework/microservice-users-login",
+      "settings": {
+        "secure_key": "dc6c64d8fbeafc6f1264a17f0bf2dde64c22f3f29acffcbf",
+        "permission_path": "../../permissions/"
+      }
+    }
+  }
+}
